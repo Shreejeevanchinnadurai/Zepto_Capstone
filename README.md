@@ -47,6 +47,11 @@ Evaluated on a held-out 20% stratified test split (16,104 orders):
 4. `current_incentive` (6.5%)
 5. `vehicle_type` (5.8%)
 
+
+## Tech Stack
+
+Python, scikit-learn, pandas, NumPy, Streamlit, Plotly, FastAPI, Uvicorn, Pydantic
+
 ## Input Features
 
 23 features across three categories:
@@ -141,25 +146,3 @@ example) and returns:
    vehicle type, rainfall, peak hour, and membership tier
 5. **Sample Order Data** — a scored sample of orders in the training schema, with
    CSV export
-
-## Known Limitations
-
-- **Scope**: this submission covers Module 1.3 (rider acceptance) only. Delivery
-  charge and ETA prediction (Modules 1.1/1.2) and Modules 2–5 (feedback
-  intelligence, vision refund, RAG support, agentic orchestration) are out of scope
-  for this build.
-- **Data**: trained on a synthetic dataset generated to mirror realistic Indian
-  quick-commerce delivery patterns, not real Zepto data (which is confidential per
-  the project brief).
-- **Confusion matrix / ROC curve in the dashboard**: reconstructed from the
-  notebook's printed classification report rather than recomputed live, since raw
-  per-sample test predictions weren't persisted alongside the saved model. The
-  underlying accuracy/F1/ROC-AUC numbers themselves are the actual reported
-  evaluation metrics.
-- **Live weather/traffic enrichment** (Open-Meteo/TomTom, per the full spec) is not
-  yet integrated — current inputs are entered manually via the form/API rather than
-  fetched live.
-
-## Tech Stack
-
-Python, scikit-learn, pandas, NumPy, Streamlit, Plotly, FastAPI, Uvicorn, Pydantic
